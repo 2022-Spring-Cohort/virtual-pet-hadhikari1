@@ -39,14 +39,9 @@ public class VirtualPetTest {
     public void tickTest(){
         VirtualPet pet = new VirtualPet("Whiskers");
         pet.tick();
-        assertEquals(8,pet.getHunger());
-        assertEquals(8,pet.getBoredom());
-        assertEquals(8,pet.getSleepy());
+        assertEquals(6,pet.getHunger());
+        assertEquals(6,pet.getBoredom());
+        assertEquals(6,pet.getSleepy());
     }
-//    @Test
-//    public void getPetStatus() {
-//        VirtualPet pet = new VirtualPet("Whiskers");
-//        pet.getPetStatus();
-//
-//    }
+
 }

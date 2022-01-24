@@ -62,13 +62,13 @@ public class VirtualPet {
 
     }
     public void tick(){
-        System.out.println("Good Morning!");
-        sleepy += 5;
-        hunger += 5;
-        boredom += 5;
+        sleepy += 3;
+        hunger += 3;
+        boredom += 3;
     }
+
     public String getPetStatus() {
-//        System.out.println("Hunger: " + hunger + "\tSleepiness: " + sleepy + "\tBoredom: " + boredom);
+        System.out.println("Hunger: " + hunger + "\tSleepiness: " + sleepy + "\tBoredom: " + boredom);
         if (hunger >= 0 && hunger < 10 ) {
             System.out.println("Hunger: I am satisfied :)");
         }

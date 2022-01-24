@@ -22,7 +22,7 @@ public class VirtualPetApplication {
         do{
             System.out.println("Choose a number to play" + "\n Press 0 to Quit." + "\n Press 1 to Feed "
                     + petName + "." + "\n Press 2 to Play with " + petName + "." +"\n Press 3 to Let "+ petName
-                    + " Sleep." + "\n Press 4 to Change Time.");
+                    + " Sleep.");
 
             chosenNumber = input.nextInt();
             if(chosenNumber == 0){
@@ -39,10 +39,6 @@ public class VirtualPetApplication {
             }
             else if(chosenNumber == 3){
                 pet.napTime();
-                System.out.println(pet.getPetStatus());
-            }
-            else if(chosenNumber == 4){
-                pet.tick();
                 System.out.println(pet.getPetStatus());
             }
 
@@ -70,6 +66,7 @@ public class VirtualPetApplication {
                 System.out.println("Sorry your pet died due to too much play time.");
                 break;
             }
+            pet.tick();
         }
         while(chosenNumber !=0);
     }
