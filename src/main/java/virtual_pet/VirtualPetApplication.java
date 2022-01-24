@@ -2,8 +2,6 @@ package virtual_pet;
 
 import java.util.Scanner;
 
-import java.util.Random;
-
 public class VirtualPetApplication {
 
     public static void main(String[] args) {
@@ -14,8 +12,6 @@ public class VirtualPetApplication {
 
         VirtualPet pet = new VirtualPet(petName);
         System.out.println("Hi, my name is " + petName + ".");
-
-        Random rand = new Random();
 
         int chosenNumber;
 

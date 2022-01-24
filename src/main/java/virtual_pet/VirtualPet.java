@@ -68,7 +68,7 @@ public class VirtualPet {
     }
 
     public String getPetStatus() {
-        System.out.println("Hunger: " + hunger + "\tSleepiness: " + sleepy + "\tBoredom: " + boredom);
+//        System.out.println("Hunger: " + hunger + "\tSleepiness: " + sleepy + "\tBoredom: " + boredom);
         if (hunger >= 0 && hunger < 10 ) {
             System.out.println("Hunger: I am satisfied :)");
         }
