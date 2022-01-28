@@ -17,50 +17,30 @@ public class VirtualPet {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public int getHunger() {
         return hunger;
-    }
-
-    public void setHunger(int hunger) {
-        this.hunger = hunger;
     }
 
     public int getBoredom() {
         return boredom;
     }
 
-    public void setBoredom(int boredom) {
-        this.boredom = boredom;
-    }
-
     public int getSleepy() {
         return sleepy;
     }
 
-    public void setSleepy(int sleepy) {
-        this.sleepy = sleepy;
-    }
-
     public void feedPet(){
         hunger = hunger - 1;
-        boredom += 1;
-        sleepy += 1;
     }
+
     public void playTime(){
         boredom = boredom - 1;
-        sleepy += 1;
-        hunger +=1;
     }
+
     public void napTime(){
         sleepy = sleepy - 1;
-        boredom +=1;
-        hunger += 1;
-
     }
+
     public void tick(){
         sleepy += 3;
         hunger += 3;
@@ -68,7 +48,7 @@ public class VirtualPet {
     }
 
     public String getPetStatus() {
-//        System.out.println("Hunger: " + hunger + "\tSleepiness: " + sleepy + "\tBoredom: " + boredom);
+        System.out.println("Hunger: " + hunger + "\tSleepiness: " + sleepy + "\tBoredom: " + boredom);
         if (hunger >= 0 && hunger < 10 ) {
             System.out.println("Hunger: I am satisfied :)");
         }

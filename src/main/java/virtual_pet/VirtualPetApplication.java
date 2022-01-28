@@ -1,10 +1,14 @@
 package virtual_pet;
 
+import virtual_pet.shelter.Shelter;
+
 import java.util.Scanner;
 
 public class VirtualPetApplication {
 
     public static void main(String[] args) {
+
+
         Scanner input = new Scanner(System.in);
         System.out.println("Welcome to Virtual Pet Game.");
         System.out.println("Please enter your pet's name");
