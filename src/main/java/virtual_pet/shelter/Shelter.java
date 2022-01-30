@@ -42,7 +42,7 @@ public class Shelter{
 
     public void tickAllPets(List<VirtualPet> petList){
         for(VirtualPet allVirtualPet: petList){
-            allVirtualPet.playTime();
+            allVirtualPet.tick();
         }
     }
 

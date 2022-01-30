@@ -30,15 +30,15 @@ public class VirtualPet {
     }
 
     public void feedPet(){
-        hunger = hunger - 1;
+        hunger = hunger - 2;
     }
 
     public void playTime(){
-        boredom = boredom - 1;
+        boredom = boredom - 2;
     }
 
     public void napTime(){
-        sleepy = sleepy - 1;
+        sleepy = sleepy - 2;
     }
 
     public void tick(){
@@ -48,7 +48,7 @@ public class VirtualPet {
     }
 
     public String getPetStatus() {
-        System.out.println("Hunger: " + hunger + "\tSleepiness: " + sleepy + "\tBoredom: " + boredom);
+//        System.out.println("Hunger: " + hunger + "\tSleepiness: " + sleepy + "\tBoredom: " + boredom);
         if (hunger >= 0 && hunger < 10 ) {
             System.out.println("Hunger: I am satisfied :)");
         }

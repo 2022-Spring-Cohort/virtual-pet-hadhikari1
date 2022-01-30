@@ -28,32 +28,9 @@ public class PetShelterMain {
         petShelter.addPet(whiskers);
 
         if (initialQuestion.toLowerCase().equals("yes")) {
-            List<VirtualPet> allPets = petShelter.getAllPets();
+            System.out.println("Pet in The Shelter are: Rex\t Spot\t Whiskers.");
+            playingWithAllPetsInShelter(input,petShelter);
 
-            do {
-                System.out.println("You Have Selected to Play With All Pets");
-                System.out.println("Choose a number to play" + "\n Press [0] to Quit." +
-                        "\n Press [3] to Feed Your Pet" + "\n Press [4] to Play With Your Pet" +
-                        "\n Press [5] to Let Your Pet Nap");
-                userInput = input.nextInt();
-
-                if (userInput == 3) {
-                    petShelter.feedAllPets(allPets);
-                    petShelter.getAllPetsStatus(allPets);
-                } else if (userInput == 4) {
-                    petShelter.playTimeWithAllPets(allPets);
-                    petShelter.getAllPetsStatus(allPets);
-//                userInput = petDeathReason(userChosenPet, userInput);
-                } else if (userInput == 5) {
-                    petShelter.napTimeForAllPets(allPets);
-                    petShelter.getAllPetsStatus(allPets);
-//                userInput = petDeathReason(userChosenPet, userInput);
-                }
-                if (userInput > 2 && userInput < 6) {
-                petShelter.tickAllPets(allPets);
-                }
-                System.out.println("");
-            } while (userInput != 0);
         }
         else {
             System.out.println("Welcome to the Game");
@@ -142,32 +119,98 @@ public class PetShelterMain {
 
     public static int petDeathReason(VirtualPet pet, int userInput) {
         if (pet.getHunger() >= 20) {
-            System.out.println("Sorry your pet died of hunger.");
+            System.out.println("Sorry " + pet.getName()+ " died of hunger.");
             return 0;
         }
         else if (pet.getHunger() <= 0) {
-            System.out.println("Sorry your pet died due to overfeeding.");
+            System.out.println("Sorry " + pet.getName()+ " died due to lack of sleep.");
             return 0;
         }
         if (pet.getSleepy() >= 20) {
-            System.out.println("Sorry your pet died due to lack of sleep.");
+            System.out.println("Sorry " + pet.getName()+ " died due to lack of sleep.");
             return 0;
         }
         else if (pet.getSleepy() <= 0) {
-            System.out.println("Sorry your pet died due to over resting.");
+            System.out.println("Sorry " + pet.getName()+ " died due to over resting.");
             return 0;
         }
         if (pet.getBoredom() >= 20) {
-            System.out.println("Sorry your pet died of boredom.");
+            System.out.println("Sorry " + pet.getName()+ " died of boredom.");
             return 0;
         }
         else if (pet.getBoredom() <= 0) {
-            System.out.println("Sorry your pet died due to too much play time.");
+            System.out.println("Sorry " + pet.getName()+ " died due to too much play time.");
             return 0;
         }
         return userInput;
     }
 
+    public static void playingWithAllPetsInShelter(Scanner input, Shelter petShelter){
+        List<VirtualPet> allPets = petShelter.getAllPets();
+        int userInput;
+        do {
+            System.out.println("You Have Selected to Play With All Pets");
+            System.out.println("Choose a number to play" + "\n Press [0] to Quit." +
+                    "\n Press [3] to Feed Your Pet" + "\n Press [4] to Play With Your Pet" +
+                    "\n Press [5] to Let Your Pet Nap");
+                userInput= input.nextInt();
+
+            if (userInput == 0) {
+                System.out.println("Bye, See you next time.");
+                break;
+            }
+            else if(userInput == 3) {
+                petShelter.feedAllPets(allPets);
+                petShelter.getAllPetsStatus(allPets);
+                userInput = deathReasonOfAllPets(allPets, userInput);
+            }
+            else if (userInput == 4) {
+                petShelter.playTimeWithAllPets(allPets);
+                petShelter.getAllPetsStatus(allPets);
+                userInput = deathReasonOfAllPets(allPets, userInput);
+            }
+            else if (userInput == 5) {
+                petShelter.napTimeForAllPets(allPets);
+                petShelter.getAllPetsStatus(allPets);
+                userInput = deathReasonOfAllPets(allPets, userInput);
+            }
+            if (userInput > 2 && userInput < 6) {
+                petShelter.tickAllPets(allPets);
+            }
+            System.out.println("");
+        } while (userInput != 0);
+    }
+
+    public static int deathReasonOfAllPets(List<VirtualPet> petList, int userInput) {
+        int temp = userInput;
+       for(VirtualPet pet : petList) {
+           if (pet.getHunger() >= 20) {
+               System.out.println("Sorry " + pet.getName()+ " died of hunger.");
+               temp = 0;
+           }
+           else if (pet.getHunger() <= 0) {
+               System.out.println("Sorry " + pet.getName()+ " died due to lack of sleep.");
+               temp = 0;
+           }
+           if (pet.getSleepy() >= 20) {
+               System.out.println("Sorry " + pet.getName()+ " died due to lack of sleep.");
+               temp = 0;
+           }
+           else if (pet.getSleepy() <= 0) {
+               System.out.println("Sorry " + pet.getName()+ " died due to over resting.");
+               temp = 0;
+           }
+           if (pet.getBoredom() >= 20) {
+               System.out.println("Sorry " + pet.getName()+ " died of boredom.");
+               temp = 0;
+           }
+           else if (pet.getBoredom() <= 0) {
+               System.out.println("Sorry " + pet.getName()+ " died due to too much play time.");
+               temp = 0;
+           }
+       }
+       return temp;
+    }
 }
 
 
