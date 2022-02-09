@@ -1,5 +1,6 @@
-package virtual_pet;
+package virtual_pet.shelter;
 
+import virtual_pet.VirtualPet;
 import virtual_pet.shelter.Shelter;;
 import java.util.List;
 import java.util.Scanner;

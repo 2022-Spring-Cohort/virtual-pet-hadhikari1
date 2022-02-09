@@ -1,10 +1,10 @@
-# Virtual Pet
+# Virtual PetsAmok
 
 Create a virtual pet. Maybe we can make this a fad!
 
 ## Setup
 
-- [ ] Go to GitHub Classroom and accept the Virtual Pet assignment by clicking on the green 'Accept this assignment' button.
+- [ ] Go to GitHub Classroom and accept the Virtual PetsAmok assignment by clicking on the green 'Accept this assignment' button.
 - [ ] Follow the link to your repository and then click on the green 'Clone or download' button.  Copy the URL onto your computer's clipboard.
 - [ ] Launch IntelliJ and go to File -> New -> Project From Version Control and paste the above URL into the URL field.  Make sure the directory is where you want the project to be on your computer.
 - [ ] Change the README.md file in your project folder to describe what you've done with your project. No fancy formatting is necessary. Just separate paragraphs with an empty line. (If you'd like to learn more about Markdown formatting, check out the [Github Markdown Guide](https://guides.github.com/features/mastering-markdown/).)
@@ -22,7 +22,7 @@ Think of which instance variables and methods you will need. We give suggestions
 
 Most games include what is called a *game loop*, a loop which updates everything in the game, representing the passage of time. We exit this loop when something happens that should cause the game to end. Include a `tick()` method (think clocks, not parasites) in your `VirtualPet` class representing the passage of a unit of time. This should do things like update instance variables of `VirtualPet` that are time dependent, such as hunger or thirst. You should call the `tick()` to represent the passage of time after each interaction with the user.
 
-There is always some confusion with this `tick()` method. It has some flexibility, what you are doing is changing the properties of your Virtual Pet at some rate in this method...every time this method is called, those properties specified in this method would update. 
+There is always some confusion with this `tick()` method. It has some flexibility, what you are doing is changing the properties of your Virtual PetsAmok at some rate in this method...every time this method is called, those properties specified in this method would update. 
 
 ### Ideas
 

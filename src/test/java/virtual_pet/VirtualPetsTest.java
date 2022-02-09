@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class VirtualPetTest {
+public class VirtualPetsTest {
     @Test
     public void getNameTest() {
       VirtualPet pet = new VirtualPet("Whiskers");
@@ -15,25 +15,25 @@ public class VirtualPetTest {
     public void feedPetTest() {
         VirtualPet pet = new VirtualPet("Whiskers");
         pet.feedPet();
-        assertEquals(2,pet.getHunger());
-        assertEquals(4,pet.getBoredom());
-        assertEquals(4,pet.getSleepy());
+        assertEquals(1,pet.getHunger());
+        assertEquals(3,pet.getBoredom());
+        assertEquals(3,pet.getSleepy());
     }
     @Test
     public void playTimeTest() {
         VirtualPet pet = new VirtualPet("Whiskers");
         pet.playTime();
-        assertEquals(4,pet.getHunger());
-        assertEquals(4,pet.getSleepy());
-        assertEquals(2,pet.getBoredom());
+        assertEquals(3,pet.getHunger());
+        assertEquals(3,pet.getSleepy());
+        assertEquals(1,pet.getBoredom());
     }
     @Test
     public void napTimeTest() {
         VirtualPet pet = new VirtualPet("Whiskers");
         pet.napTime();
-        assertEquals(4,pet.getBoredom());
-        assertEquals(4,pet.getHunger());
-        assertEquals(2,pet.getSleepy());
+        assertEquals(3,pet.getBoredom());
+        assertEquals(3,pet.getHunger());
+        assertEquals(1,pet.getSleepy());
     }
     @Test
     public void tickTest(){
